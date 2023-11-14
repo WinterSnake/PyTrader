@@ -5,7 +5,7 @@
 ##-------------------------------##
 
 ## Imports
-from setuptools import setup
+from setuptools import setup, find_packages
 
 ## Body
 with open("requirements.txt", 'r') as f:
@@ -14,6 +14,6 @@ with open("requirements.txt", 'r') as f:
 setup(
     name="PyTrader",
     version="0.0.1",
-    packages=["pytrader"],
+    packages=["pytrader", "pytrader/broker"],
     install_requires=deps
 )

@@ -7,6 +7,10 @@
 ##-------------------------------##
 
 ## Imports
+from .broker import Order
+
+## Constants
+__all__: tuple[str] = ("Account",)
 
 
 ## Classes
@@ -15,26 +19,12 @@ class Account:
     """
 
     # -Constructor
-    def __init__(self) -> None:
-        self.balance: float
-        self.margin: float
-        self.can_short: bool
-
-    # -Dunder Methods
-    def __repr__(self) -> str:
-        return ""
-
-    def __str__(self) -> str:
-        return ""
+    def __init__(self, balance: float, can_short: bool = False, margin: float | None = None) -> None:
+        self.balance: float = balance
+        self.orders: list[Order] = []
 
     # -Instance Methods
-
-    # -Class Methods
-
-    # -Static Methods
-
-    # -Properties
-
-    # -Class Properties
-
-    # -Sub-Classes
+    def tick(self) -> None:
+        '''Tick account'''
+        for order in self.orders:
+            order.tick()

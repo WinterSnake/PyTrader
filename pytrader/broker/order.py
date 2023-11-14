@@ -1,39 +1,37 @@
 #!/usr/bin/python
 ##-------------------------------##
-## PyTrader                      ##
+## PyTrader: Broker              ##
 ## Written By: Ryan Smith        ##
 ##-------------------------------##
-## Broker                        ##
+## Order                         ##
 ##-------------------------------##
 
 ## Imports
+from __future__ import annotations
+
+## Constants
+__all__: tuple[str] = ("Order",)
 
 
 ## Classes
-class Broker:
+class Order:
     """
     """
 
     # -Constructor
     def __init__(self) -> None:
-        pass
-
-    # -Dunder Methods
-    def __repr__(self) -> str:
-        return ""
-
-    def __str__(self) -> str:
-        return ""
+        self.filled: bool = False
+        self.expected_quantity: int
 
     # -Instance Methods
-    def add_currency(self) -> None:
+    def cancel(self) -> bool:
         ''''''
         pass
 
-    def add_future(self) -> None:
+    def close(self) -> Order:
         ''''''
         pass
 
-    def add_stock(self) -> None:
+    def tick(self) -> None:
         ''''''
         pass
